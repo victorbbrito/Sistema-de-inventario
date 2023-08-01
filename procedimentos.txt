@@ -1,0 +1,13 @@
+git add.
+git commit -m "comentario do commit"
+git push heroku master
+
+heroku run python manage.py migrate
+heroku run python manage.py makemigrations
+heroku run python manage.py createsuperuser
+
+py manage.py runserver
+py manage.py migrate
+py manage.py makemigrations
+
+pip freeze > requirements.txt

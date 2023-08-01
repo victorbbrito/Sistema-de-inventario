@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Lista de Usuários</title>
+    <link rel="stylesheet" href="/static/css/usuario.css" />
+    <script type="text/javascript" src="/static/js/usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body page='lista'>
+
+    <header>
+        <div id="title">
+            <a class="logo" href="/">INVENTÁRIO</a>
+        </div>
+        <ul>
+            <a class="sumir" href="/cpus">
+                <li>Computadores</li>
+            </a>
+            <a class="sumir" href="/monitores">
+                <li>Monitores</li>
+            </a>
+            <a class="sumir" href="/nobreaks">
+                <li>Nobreaks</li>
+            </a>
+            <a class="centro" href="/admin" id='logar'>
+                <li>Administração</li>
+            </a>
+        </ul>
+    </header>
+
+    <div id="listaregistro">
+        <div>
+            <input placeholder="PESQUISAR" autofocus id='inputPesquisa' />
+        </div>
+        
+        <table>
+            <h1 class="h1inv">CONSULTA  DE INVENTÁRIO</h1>
+            <thead>
+                <tr>
+                    <th>NOME</th>
+                    <th>USUÁRIO</th>
+                    <th>SETOR</th>
+                    <th>COMPUTADOR</th>
+                    <th>MONITOR 1</th>
+                    <th>MONITOR 2</th>
+                    <th>NOBREAK</th>
+                </tr>
+            </thead>
+            {% for user in lista_users %}
+            <tr>
+                <th>{{user.nome}}</th>
+                <th>{{user.usuario_ad}}</th>
+                <th>{{user.setor}}</th>
+                <th>{{user.tombo_cpu}}</th>
+                <th>{{user.tombo_monitor_1}}</th>
+                <th>{{user.tombo_monitor_2}}</th>
+                <th>{{user.tombo_nobreak}}</th>
+            </tr>
+            {% endfor %}
+            <tbody id="listaRegistroBody">
+
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="https://kit.fontawesome.com/973c01df01.js" crossorigin="anonymous"></script>
+</html>

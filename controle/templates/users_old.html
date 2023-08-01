@@ -1,0 +1,29 @@
+
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Usuários</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-cyan-500 to-blue-500 font-mono">
+    <h1>Lista de Usuários</h1>
+    <div class="flex-auto justify-between">
+       {% for user in lista_users %}
+        <p class="rounded-md"> Nome: {{ user.nome }}<br>
+            Usuário: {{user.usuario_ad}}<br>
+            Setor: {{ user.setor }}<br>
+            Computador: {{user.tombo_cpu}}<br>
+            Monitor 1: {{user.tombo_monitor_1}}<br>
+            Monitor 2: {{user.tombo_monitor_2}}<br>
+            Nobreak: {{user.tombo_nobreak}}<br>
+        </p>
+        {% endfor %}
+    </div>
+
+
+</bodybg-gray-700>
+</html>

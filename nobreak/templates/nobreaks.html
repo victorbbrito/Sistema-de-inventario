@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Lista de Nobreaks</title>
+    <link rel="stylesheet" href="/static/css/usuario.css" />
+    <script type="text/javascript" src="/static/js/usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body page='lista'>
+
+    <header>
+        <div id="title">
+            <a class="logo" href="/">INVENTÁRIO</a>
+        </div>
+        <ul>
+            <a class="sumir" href="/cpus">
+                <li>Computadores</li>
+            </a>
+            <a class="sumir" href="/monitores">
+                <li>Monitores</li>
+            </a>
+            <a class="sumir" href="/users">
+                <li>Usuários</li>
+            </a>
+            <a class="centro" href="/admin" id='logar'>
+                <li>Administração</li>
+            </a>
+        </ul>
+    </header>
+
+    <div id="listaregistro">
+        <div>
+            <input placeholder="PESQUISAR" autofocus id='inputPesquisa' />
+        </div>
+        
+        <table>
+            <h1 class="h1inv">CONSULTA  DE INVENTÁRIO</h1>
+            <thead>
+                <tr>
+                    <th>TOMBO</th>
+                    <th>NÚMERO DE SÉRIE</th>
+                    <th>MARCA</th>
+                    <th>ULTIMA EDIÇÃO</th>
+                </tr>
+            </thead>
+            {% for nobreak in lista_nobreaks %}
+            <tr>
+                <th>{{nobreak.tombo}}</th>
+                <th>{{nobreak.numero_serie}}</th>
+                <th>{{nobreak.marca}}</th>
+                <th>{{nobreak.data_edicao}}</th>
+            </tr>
+            {% endfor %}
+            <tbody id="listaRegistroBody">
+
+            </tbody>
+        </table>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Lista de CPUs</title>
+    <link rel="stylesheet" href="/static/css/usuario.css" />
+    <script type="text/javascript" src="/static/js/usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body page='lista'>
+
+    <header>
+        <div id="title">
+            <a class="logo" href="/">INVENTÁRIO</a>
+        </div>
+        <ul>
+            <a class="sumir" href="/monitores">
+                <li>Monitores</li>
+            </a>
+            <a class="sumir" href="/nobreaks">
+                <li>Nobreaks</li>
+            </a>
+            <a class="sumir" href="/users">
+                <li>Usuários</li>
+            </a>
+            <a class="centro" href="/admin" id='logar'>
+                <li>Administração</li>
+            </a>
+        </ul>
+    </header>
+
+    <div id="listaregistro">
+        <div>
+            <input placeholder="PESQUISAR" autofocus id='inputPesquisa' />
+        </div>
+        
+        <table>
+            <h1 class="h1inv">CONSULTA  DE INVENTÁRIO</h1>
+            <thead>
+                <tr>
+                    <th>TOMBO</th>
+                    <th>PROCESSADOR</th>
+                    <th>MEMÓRIA RAM</th>
+                    <th>PLACA DE VÍDEO</th>
+                    <th>HD</th>
+                    <th>SSD</th>
+                    <th>ULTIMA EDIÇÃO</th>
+                </tr>
+            </thead>
+            {% for cpu in lista_cpus %}
+            <tr>
+                <th>{{cpu.tombo }}</th>
+                <th>{{cpu.processador}}</th>
+                <th>{{cpu.memoria_ram}}</th>
+                <th>{{cpu.placa_de_video}}</th>
+                <th>{{cpu.hd}}</th>
+                <th>{{cpu.ssd}}</th>
+                <th>{{cpu.data_edicao}}</th>
+            </tr>
+            {% endfor %}
+            <tbody id="listaRegistroBody">
+
+            </tbody>
+        </table>
+    </div>
+
+
+</body>
+
+</html>
